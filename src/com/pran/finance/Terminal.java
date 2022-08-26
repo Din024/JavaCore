@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Terminal {
     public static void menu() {
+        ArrayList<MonthWastes> monthWastes = new ArrayList<>();
+        YearWastes yearWastes = new YearWastes();
         Scanner scanner = new Scanner(System.in);
         String userInput = "default";
         String path;
@@ -21,18 +23,20 @@ public class Terminal {
             userInput = scanner.nextLine();
             switch (userInput) {
                 case ("1"):
-                    ArrayList<MonthWastes> monthWastes = new ArrayList<>();
                     System.out.println("Введите папку с отчетами: ");
                     path = scanner.nextLine();
                     FileReader.monthlyReport(path, monthWastes);
                     break;
                 case ("2"):
-                    ArrayList<YearWastes> yearWastes = new ArrayList<>();
                     System.out.println("Введите папку с отчетом: ");
                     path = scanner.nextLine();
                     FileReader.yearlyReport(path, yearWastes);
                     break;
                 case ("3"):
+                    System.out.println(MonthWastes.sumOfWastes(monthWastes));
+                    System.out.println(MonthWastes.sumOfIncome(monthWastes));
+                    System.out.println(YearWastes.sumOfWastes(yearWastes));
+                    System.out.println(YearWastes.sumOfIncome(yearWastes));
                     break;
                 case ("4"):
                     break;

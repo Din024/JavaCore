@@ -8,7 +8,7 @@ import java.util.Objects;
 
 
 public class FileReader {
-    public static String readReport(String path){
+    private static String readReport(String path){
         try {
             return Files.readString(Path.of(path));
         } catch (IOException e) {
@@ -18,28 +18,33 @@ public class FileReader {
 
     public static void monthlyReport(String path, ArrayList<MonthWastes> monthWastes) {
         for (int i = 1; i < 4; i++) {
+            MonthWastes waste = new MonthWastes();
             String newPath = path + "\\m.20210" + i + ".csv";
             if (readReport(newPath) != null) {
                 String[] fileContents = Objects.requireNonNull(readReport(newPath)).split("\\n");
                 for (int j = 1; j < fileContents.length; j++) {
                     String[] line = fileContents[j].split(",");
-                    MonthWastes waste = new MonthWastes(line[0], Boolean.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3].replaceAll("\\r", "")));
-                    monthWastes.add(waste);
+                    waste.setItemName(line[0]);
+                    waste.setIsExpense(Boolean.valueOf(line[1]));
+                    waste.setQuantity(Integer.valueOf(line[2]));
+                    waste.setSumOfOne(Integer.valueOf(line[3].replaceAll("\\r", "")));
                 }
+                monthWastes.add(waste);
             } else {
                 System.out.println("Невозможно прочитать файл " + newPath);
             }
         }
     }
 
-    public static void yearlyReport(String path, ArrayList<YearWastes> yearWastes) {
+    public static void yearlyReport(String path, YearWastes yearWastes) {
         String newPath = path + "\\y.2021.csv";
         if (readReport(newPath) != null) {
             String[] fileContents = Objects.requireNonNull(readReport(newPath)).split("\\n");
             for (int j = 1; j < fileContents.length; j++) {
                 String[] line = fileContents[j].split(",");
-                YearWastes yearWaste = new YearWastes(line[0], Integer.valueOf(line[1]), Boolean.valueOf(line[2]));
-                yearWastes.add(yearWaste);
+                yearWastes.setMonth(line[0]);
+                yearWastes.setAmount(Integer.valueOf(line[1]));
+                yearWastes.setIsExpense(Boolean.valueOf(line[2].replaceAll("\\r", "")));
             }
         } else {
             System.out.println("Невозможно прочитать файл " + newPath);
