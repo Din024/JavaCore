@@ -48,7 +48,7 @@ public class MonthWastes {
         return sumOfOne;
     }
 
-    public static ArrayList<Integer> sumOfWastes (ArrayList<MonthWastes> monthWastes) {
+    public static ArrayList<Integer> sumOfWastes(ArrayList<MonthWastes> monthWastes) {
         ArrayList<Integer> sumOfWastes = new ArrayList<>();
         int tempSum = 0;
         for (MonthWastes wastes : monthWastes) {
@@ -63,7 +63,7 @@ public class MonthWastes {
         return sumOfWastes;
     }
 
-    public static ArrayList<Integer> sumOfIncome (ArrayList<MonthWastes> monthWastes) {
+    public static ArrayList<Integer> sumOfIncome(ArrayList<MonthWastes> monthWastes) {
         ArrayList<Integer> sumOfIncome = new ArrayList<>();
         int tempSum = 0;
         for (MonthWastes wastes : monthWastes) {
@@ -76,5 +76,24 @@ public class MonthWastes {
             tempSum = 0;
         }
         return sumOfIncome;
+    }
+
+    public static void monthInfo(ArrayList<MonthWastes> monthWastes) {
+        int maxIncome = 0, maxWaste = 0;
+        int numIncome = 0, numWaste = 0;
+        for (int i = 0; i < monthWastes.size(); i++) {
+            for (int j = 0; j < monthWastes.get(i).getIsExpense().size(); j++) {
+                if ((monthWastes.get(i).getIsExpense().get(j)) && (monthWastes.get(i).getQuantity().get(j) * monthWastes.get(i).getSumOfOne().get(j) > maxWaste)) {
+                    maxWaste = monthWastes.get(i).getQuantity().get(j) * monthWastes.get(i).getSumOfOne().get(j);
+                    numWaste = j;
+                }
+                if ((!monthWastes.get(i).getIsExpense().get(j)) && (monthWastes.get(i).getQuantity().get(j) * monthWastes.get(i).getSumOfOne().get(j) > maxIncome)) {
+                    maxIncome = monthWastes.get(i).getQuantity().get(j) * monthWastes.get(i).getSumOfOne().get(j);
+                    numIncome = j;
+                }
+            }
+            System.out.println("В " + (i + 1) + " месяце наибольшая трата = " + maxWaste + " у товара " + monthWastes.get(i).getItemName().get(numWaste));
+            System.out.println("А наибольшая прибыль = " + maxIncome + " у товара " + monthWastes.get(i).getItemName().get(numIncome));
+        }
     }
 }

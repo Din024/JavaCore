@@ -22,32 +22,27 @@ public class Terminal {
                     """);
             userInput = scanner.nextLine();
             switch (userInput) {
-                case ("1"):
+                case ("1") -> {
                     System.out.println("Введите папку с отчетами: ");
                     path = scanner.nextLine();
                     FileReader.monthlyReport(path, monthWastes);
-                    break;
-                case ("2"):
+                }
+                case ("2") -> {
                     System.out.println("Введите папку с отчетом: ");
                     path = scanner.nextLine();
                     FileReader.yearlyReport(path, yearWastes);
-                    break;
-                case ("3"):
+                }
+                case ("3") -> {
                     System.out.println(MonthWastes.sumOfWastes(monthWastes));
                     System.out.println(MonthWastes.sumOfIncome(monthWastes));
                     System.out.println(YearWastes.sumOfWastes(yearWastes));
                     System.out.println(YearWastes.sumOfIncome(yearWastes));
-                    break;
-                case ("4"):
-                    break;
-                case ("5"):
-                    break;
-                case ("exit"):
-                    System.out.println("Завершение работы");
-                    break;
-                default:
-                    System.out.println("Введены неверные значения\n");
-                    break;
+                    Compare.compare(MonthWastes.sumOfWastes(monthWastes), YearWastes.sumOfWastes(yearWastes), MonthWastes.sumOfIncome(monthWastes), YearWastes.sumOfIncome(yearWastes));
+                }
+                case ("4") -> MonthWastes.monthInfo(monthWastes);
+                case ("5") -> YearWastes.yearInfo(yearWastes);
+                case ("exit") -> System.out.println("Завершение работы");
+                default -> System.out.println("Введены неверные значения\n");
             }
         }
     }

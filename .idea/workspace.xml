@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44afe8ae-31f7-48d5-86dc-e0d9c282eb36" name="Changes" comment="Add FileReader and classes for it&#10;Add Terminal">
+    <list default="true" id="44afe8ae-31f7-48d5-86dc-e0d9c282eb36" name="Changes" comment="Add method for calculate incomes and wastes in YearWastes and MonthWastes">
+      <change afterPath="$PROJECT_DIR$/src/com/pran/finance/Compare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pran/finance/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pran/finance/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pran/finance/FinanceRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pran/finance/FinanceRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pran/finance/MonthWastes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pran/finance/MonthWastes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pran/finance/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pran/finance/Terminal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pran/finance/YearWastes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pran/finance/YearWastes.java" afterDir="false" />
@@ -51,7 +50,8 @@
       <updated>1661449198484</updated>
       <workItem from="1661449200514" duration="15369000" />
       <workItem from="1661464831415" duration="111000" />
-      <workItem from="1661496132747" duration="14408000" />
+      <workItem from="1661496132747" duration="14925000" />
+      <workItem from="1661770581034" duration="3347000" />
     </task>
     <task id="LOCAL-00001" summary="Add FileReader and classes for it&#10;Add Terminal">
       <created>1661464501860</created>
@@ -60,7 +60,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661464501860</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add method for calculate incomes and wastes in YearWastes and MonthWastes">
+      <created>1661541697078</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661541697078</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,7 +84,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -91,7 +98,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add FileReader and classes for it&#10;Add Terminal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add FileReader and classes for it&#10;Add Terminal" />
+    <MESSAGE value="Add method for calculate incomes and wastes in YearWastes and MonthWastes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add method for calculate incomes and wastes in YearWastes and MonthWastes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

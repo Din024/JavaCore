@@ -77,4 +77,17 @@ public class YearWastes {
         Collections.addAll(sumOfIncome, tempSumOfIncome);
         return sumOfIncome;
     }
+
+    public static void yearInfo(YearWastes yearWastes) {
+        ArrayList<Integer> wastes = sumOfWastes(yearWastes);
+        ArrayList<Integer> income = sumOfIncome(yearWastes);
+        double averageWaste = 0.0, averageIncome = 0.0;
+        for (int i = 0; i < wastes.size(); i++) {
+            averageWaste += wastes.get(i);
+            averageIncome += income.get(i);
+            System.out.println("В " + (i + 1) + " месяце выручка = " + (income.get(i) - wastes.get(i)));
+        }
+        System.out.println("Средний расход = " + averageWaste/wastes.size());
+        System.out.println("Средний доход = " + averageIncome/income.size());
+    }
 }
